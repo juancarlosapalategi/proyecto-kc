@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head_title%}
+{{ super() }}: Inicio
+{% endblock head_title %}
+
+
+
+{% block contenido %}
+
+<h1>MOVIMIENTOS</h1>
+
+<table class="paper">
+    <tr>
+        <th class="titulo-tabla">Fecha</th>
+        <th class="titulo-tabla">Hora</th>
+        <th class="titulo-tabla">From_currency</th>
+        <th class="titulo-tabla">From_cuantity</th>
+        <th class="titulo-tabla">To_currency</th>
+        <th class="titulo-tabla">To_cuantity</th>
+
+    </tr>
+    {% for m in movs %}
+    <tr>
+        <td>{{ m.fecha }}</td>
+        <td>{{ m.hora }}</td>
+        <td>{{ m.from_currency }}</td>
+        <td>{{ m.from_cuantity }}</td>
+        <td>{{ m.to_currency }}</td>
+        <td>{{ m.to_cuantity }}</td>
+
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+<p>
+    <a href="/status"><button type="estado">Status</button></a>
+    <a href="/compra"><button type="nuevo"><i class="fa-solid fa-plus"></i></button></a>
+</p>
+{% endblock contenido %}

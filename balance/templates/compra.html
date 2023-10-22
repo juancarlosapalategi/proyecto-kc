@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head_title%}
+{{ super() }}: Inicio
+{% endblock head_title %}
+
+{% block contenido %}
+
+<h1>COMPRA DE CRIPTOS</h1>
+
+<div class="selects">
+    <div class="selects-item">
+        <label for="">Desde:</label>
+        <select name="" id="">
+            <option value="0">...</option>
+        </select>
+    </div>
+    <div class="selects-item">
+        <label for="">To:</label>
+        <select name="" id="">
+            <option value="0">...</option>
+        </select>
+    </div>
+</div>
+
+<div class="cantidad">
+    <div class="cantidad-item">
+        <label for="">Valor:</label>
+        <select name="" id="">
+            <option value="0">...</option>
+        </select>
+        <i class="fa-solid fa-calculator"></i>
+    </div>
+    <div class="cantidad-item">
+        <label for="">Q:</label>
+        <input type="">
+        <div>
+            <label for="">P.U.:</label>
+            <input type="">
+            <div>
+                <a href="/"><button type="nuevo"><i class="fa-solid fa-check"></i></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

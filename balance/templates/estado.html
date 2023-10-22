@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_title%}
+{{ super() }}: Inicio
+{% endblock head_title %}
+
+{% block contenido %}
+
+<h1>ESTADO DE LA INVERSION</h1>
+<div class="estado">
+    <label for="inv">Total invertido:</label>
+    <input type="text" name="inv" id="inv">
+    <label for="valor">Valor actual:</label>
+    <input type="text" name="valor" id="valor">
+</div>
+
+<a href="/"><button type="nuevo"><i class="fa-solid fa-arrow-left-long"></i></button></a>
+{% endblock contenido %}

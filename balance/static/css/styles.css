@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #b8174c;
+    --secundary-color: #19a187;
+
+    --neutral-100: #f0f0f0;
+    --neutral-50: #888;
+    --neutral-0: black;
+
+    --error-color: var(--primary-color);
+    --default-border: solid thin var(--secundary-color)
+}
+
+
+header {
+    background-color: var(--neutral-50);
+    color: var(--neutral-100);
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: large;
+}
+
+.navbar {
+    background-color: var(--secundary-color);
+    color: var(--neutral-100);
+    height: 25px;
+    line-height: 25px;
+    padding-left: 20px;
+}
+
+.navbar a,
+.navbar a:active,
+.navbar a:focus,
+.navbar a:visited,
+.navbar a:hover {
+    color: var(--neutral-100);
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+table.paper {
+    width: 100%;
+    margin: 0;
+}
+
+
+table.paper .titulo-tabla {
+    border-bottom: solid thin var(--secundary-color);
+}
+
+td {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pie-pagina {
+    padding: 20px;
+    border-top: solid thin var(--neutral-50);
+}
+
+p {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.selects {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.selects-item {
+    width: 33%;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-solid {
+    font-size: xx-large;
+
+}
