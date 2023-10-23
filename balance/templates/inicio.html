@@ -9,7 +9,7 @@
 {% block contenido %}
 
 <h1>MOVIMIENTOS</h1>
-
+{% if movs %}
 <table class="paper">
     <tr>
         <th class="titulo-tabla">Fecha</th>
@@ -33,8 +33,11 @@
     {% endfor %}
 
 
-
 </table>
+{% else %}
+<h2 class="lista_vacia">No hay movimientos disponibles</h2>
+{% endif %}
+
 <p>
     <a href="/status"><button type="estado">Status</button></a>
     <a href="/compra"><button type="nuevo"><i class="fa-solid fa-plus"></i></button></a>

@@ -47,6 +47,10 @@ table.paper {
     margin: 0;
 }
 
+.lista_vacia {
+    text-align: center;
+    color: var(--primary-color);
+}
 
 table.paper .titulo-tabla {
     border-bottom: solid thin var(--secundary-color);
