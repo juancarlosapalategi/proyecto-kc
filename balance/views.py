@@ -25,12 +25,12 @@ def nuevo():
     from_currency = request.form['from_currency']
     from_quantity = request.form['from_quantity']
     to_currency = request.form['to_currency']
-    # to_quantity = request.form['to_quantity']
+    to_quantity = request.form['to_quantity']
 
     db = DBManager('balance/data/balance.db')
     consulta = 'INSERT INTO movimientos (fecha, hora, from_currency, from_quantity, to_currency, to_quantity) VALUES (?, ?, ?, ?, ?, ?)'
     dateNow = datetime.now()
-    valores  = (dateNow.strftime("%d/%m/%Y"), dateNow.strftime("%H:%M:%S"), from_currency, from_quantity, to_currency, 0)
+    valores  = (dateNow.strftime("%d/%m/%Y"), dateNow.strftime("%H:%M:%S"), from_currency, from_quantity, to_currency, to_quantity)
 
     conexion, cursor = db.conectar()
     cursor.execute(consulta, valores)

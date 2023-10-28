@@ -4,8 +4,6 @@
 {{ super() }}: Inicio
 {% endblock head_title %}
 
-
-
 {% block contenido %}
 
 <h1>MOVIMIENTOS</h1>
@@ -14,11 +12,10 @@
     <tr>
         <th class="titulo-tabla">Fecha</th>
         <th class="titulo-tabla">Hora</th>
-        <th class="titulo-tabla">From_currency</th>
-        <th class="titulo-tabla">From_quantity</th>
-        <th class="titulo-tabla">To_currency</th>
-        <th class="titulo-tabla">To_quantity</th>
-
+        <th class="titulo-tabla">Moneda origen</th>
+        <th class="titulo-tabla">Cantidad origen</th>
+        <th class="titulo-tabla">Moneda destino</th>
+        <th class="titulo-tabla">Cantidad destino</th>
     </tr>
     {% for m in movs %}
     <tr>
@@ -28,11 +25,8 @@
         <td>{{ m.from_quantity }}</td>
         <td>{{ m.to_currency }}</td>
         <td>{{ m.to_quantity }}</td>
-
     </tr>
     {% endfor %}
-
-
 </table>
 {% else %}
 <h2 class="lista_vacia">No hay movimientos disponibles</h2>
