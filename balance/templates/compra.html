@@ -8,40 +8,52 @@
 
 <h1>COMPRA DE CRIPTOS</h1>
 
-<div class="selects">
-    <div class="selects-item">
-        <label for="">Desde:</label>
-        <select name="" id="">
-            <option value="0">...</option>
-        </select>
+<form action="{{ url_for('nuevo') }}" method="post">
+    <div class="selects">
+        <div class="selects-item">
+            <label for="">Moneda-origen:</label>
+            <select name="from_currency" id="currency-from">
+                <option value="EUR">Euro</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Ethereum</option>
+                <option value="ADA">Cardano</option>
+                <option value="SOL">Solana</option>
+                <option value="DOT">Polkadot</option>
+            </select>
+        </div>
+        <div class="selects-item">
+            <label for="">Moneda-destino:</label>
+            <select name="to_currency" id="currency-to">
+                <option value="EUR">Euro</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Ethereum</option>
+                <option value="ADA">Cardano</option>
+                <option value="SOL">Solana</option>
+                <option value="DOT">Polkadot</option>
+            </select>
+        </div>
     </div>
-    <div class="selects-item">
-        <label for="">To:</label>
-        <select name="" id="">
-            <option value="0">...</option>
-        </select>
-    </div>
-</div>
 
-<div class="cantidad">
-    <div class="cantidad-item">
-        <label for="">Valor:</label>
-        <select name="" id="">
-            <option value="0">...</option>
-        </select>
-        <i class="fa-solid fa-calculator"></i>
-    </div>
-    <div class="cantidad-item">
-        <label for="">Q:</label>
-        <input type="">
-        <div>
-            <label for="">P.U.:</label>
-            <input type="">
+    <div class="cantidad">
+        <div class="cantidad-item">
+            <label for="">Valor a invertir:</label>
+            <input type="text" name="from_quantity" id="value-to-convert">
+            <input type="hidden" id="value-to-convert-hidden" />
+            <i class="fa-solid fa-calculator cursor-p" onclick="loadCurrencies()"></i>
+            <!-- TODO: Acuérdate del valueToConvert -->
+        </div>
+        <div class="cantidad-item">
+            <label for="">Cantidad:</label>
+            <input type="text" name="to_quantity" id="quantity" disabled>
             <div>
-                <a href="/"><button type="nuevo"><i class="fa-solid fa-check"></i></button></a>
+                <label for="">P.U.:</label>
+                <input type="text" id="unitPrice" disabled>
+                <div>
+                    <button type="submit"><i class="fa-solid fa-check"></i></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 
 {% endblock contenido %}

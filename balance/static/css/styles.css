@@ -94,3 +94,7 @@ p {
     font-size: xx-large;
 
 }
+
+.cursor-p {
+    cursor: pointer;
+}

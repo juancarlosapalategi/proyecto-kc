@@ -15,9 +15,9 @@
         <th class="titulo-tabla">Fecha</th>
         <th class="titulo-tabla">Hora</th>
         <th class="titulo-tabla">From_currency</th>
-        <th class="titulo-tabla">From_cuantity</th>
+        <th class="titulo-tabla">From_quantity</th>
         <th class="titulo-tabla">To_currency</th>
-        <th class="titulo-tabla">To_cuantity</th>
+        <th class="titulo-tabla">To_quantity</th>
 
     </tr>
     {% for m in movs %}
@@ -25,9 +25,9 @@
         <td>{{ m.fecha }}</td>
         <td>{{ m.hora }}</td>
         <td>{{ m.from_currency }}</td>
-        <td>{{ m.from_cuantity }}</td>
+        <td>{{ m.from_quantity }}</td>
         <td>{{ m.to_currency }}</td>
-        <td>{{ m.to_cuantity }}</td>
+        <td>{{ m.to_quantity }}</td>
 
     </tr>
     {% endfor %}
