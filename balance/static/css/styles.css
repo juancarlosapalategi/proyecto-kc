@@ -98,3 +98,21 @@ p {
 .cursor-p {
     cursor: pointer;
 }
+
+.messages {
+    position: absolute;
+    width: 400px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.messages-ko {
+    background: var(--primary-color);
+}
+
+.messages-ok {
+    background: var(--secundary-color);
+}

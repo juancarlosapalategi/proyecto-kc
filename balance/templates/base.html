@@ -17,16 +17,29 @@
     {% include 'components/header.html' %}
     {% include 'components/navbar.html' %}
 
-
     <main>
-        {% with mensajes = get_flashed_messages() %}
-        {% if mensajes %}
-        <div class="exito-flash">
-            <p><i class="fa-solid fa-circle-check fa-2xl" style="color: #1dc347;"></i></p>
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+        <div class="messages messages-ko">
+            <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #c31d1d;"></i>
 
-            <div class="mensajes-flash">
-                {% for msg in mensajes %}
-                <p>{{ msg }}</p>
+            <div class="messages-flash">
+                {% for error in errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% with messages = get_flashed_messages(category_filter=["message"]) %}
+        {% if messages %}
+        <div class="messages messages-ok">
+            <i class="fa-solid fa-circle-check fa-2xl" style="color: #1dc339;"></i>
+
+            <div class="messages-flash">
+                {% for message in messages %}
+                <p>{{ message }}</p>
                 {% endfor %}
             </div>
         </div>

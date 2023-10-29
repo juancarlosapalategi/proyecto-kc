@@ -24,7 +24,7 @@
         <td>{{ m.from_currency }}</td>
         <td>{{ m.from_quantity }}</td>
         <td>{{ m.to_currency }}</td>
-        <td>{{ m.to_quantity }}</td>
+        <td>{{ m.to_quantity|round(5) }}</td>
     </tr>
     {% endfor %}
 </table>
@@ -33,7 +33,7 @@
 {% endif %}
 
 <p>
-    <a href="/status"><button type="estado">Status</button></a>
-    <a href="/compra"><button type="nuevo"><i class="fa-solid fa-plus"></i></button></a>
+    <a href="/estado"><button>Estado</button></a>
+    <a href="/compra"><button><i class="fa-solid fa-plus"></i></button></a>
 </p>
 {% endblock contenido %}

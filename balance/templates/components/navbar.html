@@ -1,7 +1,19 @@
 <nav class="navbar">
+    {% if menu == 1 %}
+    <span>Inicio</span>
+    {% else %}
     <a href="/">Inicio</a>
+    {% endif %}
     |
+    {% if menu == 2 %}
+    <span>Compra</span>
+    {% else %}
     <a href="/compra">Compra</a>
+    {% endif %}
     |
-    <a href="/status">Status</a>
+    {% if menu == 3 %}
+    <span>Estado</span>
+    {% else %}
+    <a href="/estado">Estado</a>
+    {% endif %}
 </nav>
