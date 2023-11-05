@@ -56,7 +56,7 @@ def estado2():
         if listMergedResultItem["MonedaOrigen"] == "EUR":
             destinyQuantity = float(listMergedResultItem["SumaMonedaDestino"])
         else:
-            apiKey = "E32AC0F0-3997-41B6-990F-19606ECC33ED"
+            apiKey = apiKey
             endpoint = f"https://rest.coinapi.io/v1/exchangerate/EUR?filter_asset_id={listMergedResultItem['MonedaOrigen']}&apikey={apiKey}"
             response = requests.request("GET", endpoint)
             jsonResponse = response.json()
@@ -81,6 +81,7 @@ def estado2():
         finalResult = float(destinyQuantity) - float(resultadoActual)
 
     return render_template('estado.html', Sum=finalResult, menu=3)
+
         
 
 @app.route('/nuevo', methods=['POST'])
