@@ -1,12 +1,19 @@
-from flask import render_template, request, redirect, flash
-from .models import DBManager
 from datetime import datetime
-from . import app
+from dotenv import load_dotenv
+from flask import render_template, request, redirect, flash
+import os
 import requests
 import sys
 
-print(sys.executable, 'JUANKAR')
+
+from . import app
+from .models import DBManager
+
+
+load_dotenv()
+
 db = DBManager('balance/data/balance.db')
+apikey = os.getenv('apiKey')
 
 @app.route('/')
 def inicio():
@@ -56,7 +63,7 @@ def estado2():
         if listMergedResultItem["MonedaOrigen"] == "EUR":
             destinyQuantity = float(listMergedResultItem["SumaMonedaDestino"])
         else:
-            apiKey = apiKey
+            apiKey = apikey
             endpoint = f"https://rest.coinapi.io/v1/exchangerate/EUR?filter_asset_id={listMergedResultItem['MonedaOrigen']}&apikey={apiKey}"
             response = requests.request("GET", endpoint)
             jsonResponse = response.json()
@@ -79,6 +86,7 @@ def estado2():
         print(float(e["CantidadOrigen"]))
         print(originQuantity)
         finalResult = float(destinyQuantity) - float(resultadoActual)
+        return redirect('/estado')
 
     return render_template('estado.html', Sum=finalResult, menu=3)
 
