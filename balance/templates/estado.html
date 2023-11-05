@@ -12,9 +12,9 @@
     {% for d in data %}
     <label for="inv">Total invertido:</label>
     <input type="text" name="inv" id="inv" value="{{ d.CantidadOrigen }}">
-    <label for="valor">Valor actual:</label>
-    <input type="text" name="valor" id="valor">
     {% endfor %}
+    <label for="valor">Valor actual:</label>
+    <input type="text" name="valor" id="valor" value="{{ Sum }}">
 </div>
 
 <a href="/"><button type="nuevo"><i class="fa-solid fa-arrow-left-long"></i></button></a>

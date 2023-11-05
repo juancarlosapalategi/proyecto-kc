@@ -27,56 +27,6 @@ function loadCurrencies() {
         document.getElementById("quantity").value = quantity;
         document.getElementById("unitPrice").value = unitPrice.toFixed(2);
     }
+
+
 }
-
-// function savePurchaseData() {
-//     alert("entra")
-//     var from = document.getElementById('currency-from').value;
-//     var to = document.getElementById('currency-to').value;
-//     var valueToConvert = document.getElementById('value-to-convert');
-
-//     const sqlite3 = require('sqlite3').verbose();
-
-//     // Create/connect to the database
-//     const db = new sqlite3.Database('balance.db');
-
-//     // Insert data
-//     const insertQuery = `INSERT INTO movimientos (fecha, hora, From_currency, From_quantity, To_currency, To_quantity) VALUES (?, ?, ?, ?, ?, ?)`;
-//     var fecha = dateFormatted();
-//     var hora = hourFormatted();
-//     var From_currency = from;
-//     var From_quantity = valueToConvert;
-//     var To_currency = to;
-//     var To_quantity = document.getElementById("quantity").value;
-
-//     db.run(insertQuery, [fecha, hora, From_currency, From_quantity, To_currency, To_quantity], function (err) {
-//         if (err) {
-//             console.error(err.message);
-//         } else {
-//             alert(`Data with new ID ${this.lastID} has been inserted`);
-//             console.log(`Inserted data with id ${this.lastID}`);
-//         }
-//     });
-
-//     // Close the database connection
-//     db.close();
-// }
-
-// function dateFormatted() {
-//     const date = new Date();
-//     let currentDay = String(date.getDate()).padStart(2, '0');
-//     let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
-//     let currentYear = date.getFullYear();
-//     let currentDate = `${currentDay}/${currentMonth}/${currentYear}`;
-
-//     return currentDate;
-// }
-
-// function hourFormatted() {
-//     const date = new Date();
-//     let hour = String(date.getHours()).padStart(2, '0');
-//     let minutes = String(date.getMinutes()).padStart(2, '0');
-//     let currentHour = `${hour}:${minutes}`;
-
-//     return currentHour;
-// }

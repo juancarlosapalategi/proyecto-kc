@@ -101,7 +101,7 @@ p {
 
 .messages {
     position: absolute;
-    width: 400px;
+    width: 800px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -109,10 +109,29 @@ p {
     color: #fff;
 }
 
+.messages-flash {
+    padding: 20px;
+}
+
+.fade-in-out {
+    animation: fade-out 1s 0s ease-out forwards;
+    animation-delay: 6s;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .messages-ko {
-    background: var(--primary-color);
+    background: #ea9bb5;
 }
 
 .messages-ok {
-    background: var(--secundary-color);
+    background: #9beab7;
 }
